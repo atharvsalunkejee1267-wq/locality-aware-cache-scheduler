@@ -47,7 +47,6 @@ Compile the project via terminal:
 
 Bash
 g++ -std=c++11 main.cpp -o cache_simulator && ./cache_simulator
-./cache_simulator
 📈 Example Output
 Plaintext
 Current Queue:[task_beta task_alpha ]
