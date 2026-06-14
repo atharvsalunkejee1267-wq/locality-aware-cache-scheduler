@@ -187,15 +187,15 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
     cout<<"L3 Cache:";L3.printmem();cout<<endl;
     for(const string& req:t.memory){
         node* current=L1.head->next;
-          bool foundInL1=false;
+          bool foundinL1=false;
         while (current!=L1.tail){
             if (current->mem==req){
-                foundInL1=true;
+                foundinL1=true;
                 break;
             }
             current=current->next;
         }
-        if (foundInL1) {
+        if (foundinL1) {
             totallatency+=latencyL1;
             L1.bringtofront(current);
             cout<<"L1HIT"<<req<<endl;
@@ -203,15 +203,15 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
         }
 
         current=L2.head->next;
-        bool foundInL2=false;
+        bool foundinL2=false;
         while(current!=L2.tail) {
             if(current->mem==req){
-                foundInL2=true;
+                foundinL2=true;
                 break;
             }
                 current=current->next;
         }
-        if(foundInL2){
+        if(foundinL2){
             totallatency+=latencyL1+latencyL2;
             cout<<"L1 MISS->L2 HIT"<<req<<endl;
             L2.remove(req);
@@ -220,15 +220,15 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
         }
 
         current=L3.head->next;
-        bool foundInL3=false;
+        bool foundinL3=false;
         while(current!=L3.tail){
             if(current->mem==req){
-                foundInL3=true;
+                foundinL3=true;
                  break;
             }
             current = current->next;
         }
-        if(foundInL3){
+        if(foundinL3){
             totallatency+=latencyL1+latencyL2+latencyL3;
             cout<<"L1MISS->L2 MISS-> L3 HIT"<<req<<endl;
             L3.remove(req);
