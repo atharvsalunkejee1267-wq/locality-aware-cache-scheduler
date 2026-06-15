@@ -214,7 +214,7 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
                 current=current->next;
         }
         if(foundinL2){
-            totallatency+=latencyL1+latencyL2;
+            totallatency+=latencyL2;
             cout<<"L1 MISS->L2 HIT"<<req<<endl;
             L2.remove(req);
             insertionbetweenmem(req,  L1,L2,L3);
@@ -231,14 +231,14 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
             current = current->next;
         }
         if(foundinL3){
-            totallatency+=latencyL1+latencyL2+latencyL3;
+            totallatency+=latencyL3;
             cout<<"L1MISS->L2 MISS-> L3 HIT"<<req<<endl;
             L3.remove(req);
             insertionbetweenmem(req,L1,L2,L3);
             continue;
         }
 
-        totallatency+=latencyL1+latencyL2+latencyL3+latencyRAM;
+        totallatency+=latencyRAM;
         cout << "L1MISS->L2 MISS->L3 MISS->RAM "<<endl;
         insertionbetweenmem(req,L1,L2,L3);
         RAMHIT++;
