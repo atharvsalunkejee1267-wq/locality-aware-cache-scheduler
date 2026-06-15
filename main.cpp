@@ -270,11 +270,11 @@ int main() {
     doublelinkedlist L1,L2,L3;
     int totallatency=0;
     int ramhits=0;
+    currentqueue(Queue);
     while (!Queue.empty()){
         task currentTask=Queue.front();
         Queue.pop_front();
         processMemoryAccess(currentTask,totallatency,L1,L2,L3,ramhits,currentTask.memory);
-         currentqueue(Queue);
     }
     cout<<endl;
     cout<<"RESULT"<<endl;
