@@ -177,6 +177,7 @@ void processMemoryAccess(task t, int& totallatency,doublelinkedlist& L1,doubleli
     int latencyL3 = 40;
     int latencyRAM = 200;
     totallatency+=t.excy;
+    cout<<endl;
 cout<<"running "<<t.taskname<<" "<<"Burst Time:"<< t.time <<endl ;
 for(int i=0; i<blocks.size();i++){
     cout<<"Memory Block "<<i+1<<":"<<blocks[i]<<endl;
