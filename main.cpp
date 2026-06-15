@@ -28,7 +28,7 @@ class task {
     }
 };
 
-bool timecompareforsjr(task& a,task& b){
+bool timecompareforsjr(const task& a,const task& b){
     if (a.time < b.time){
         return true;
     }
