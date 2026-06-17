@@ -28,6 +28,10 @@ class task {
     }
 };
 
+
+
+//cpu sheduling 
+
 bool timecompareforsjr(const task& a,const task& b){
     if (a.time < b.time){
         return true;
@@ -77,6 +81,10 @@ void currentqueue(deque<task>& Queue) {
 void nextcycledequeu( deque<task> & Queue){
     Queue.pop_front();
 }
+
+
+
+// cache simulation 
 
 class node {
     public:
@@ -249,6 +257,12 @@ cout<<"L1 Cache:";L1.printmem();cout<<endl;
     cout<<endl;
 }
     }
+
+
+
+
+
+
 
 int main() {
     vector<task> givent;
